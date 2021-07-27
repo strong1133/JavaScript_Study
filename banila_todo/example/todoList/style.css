@@ -1,0 +1,207 @@
+ * {
+   box-sizing :border-box;
+   margin: 0;
+   padding: 0;
+ }
+
+html,body{
+  width:100%;
+  height:100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #32ff7e;
+}
+
+.container {
+  position: relative;
+  overflow: hidden;
+  width:350px;
+  height: 650px;
+  background: #fff;
+  padding: 30px 25px;
+}
+.container:before {
+  content: '';
+  position: absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height: 35%;
+  background: #f9ca24;
+  z-index: 1;
+}
+.container .top-area{
+  position: relative;
+  z-index: 2;
+}
+
+.search-bar {
+  padding: 0 20px;
+  position: relative;
+}
+.search-bar input {
+  width:80%;
+  margin: 0 auto;
+  display: block;
+  padding: 12px 0;
+  text-align: center;
+  border-radius: 20px;
+  border:none;
+  background: rgba(255,255,255,0.3);
+  color:rgba(255,255,255,0.7);
+  font-size: 14px;
+}
+.date-box {
+  position: relative;
+  padding-top:35px;
+}
+.date-box strong{
+  display:inline-block;
+  color:#000;
+  min-width:35px;
+  /* background: red; */
+  font-size: 35px;
+}
+.date-box .cover {
+  position: relative;
+  min-height:48px;
+  display:inline-block;
+  /* background: red; */
+  vertical-align:top;
+}
+.date-box .cover .month {
+  color:#fff;
+  font-size: 20px;
+}
+.date-box .cover .year {
+  position: absolute;
+  bottom:0; left:0;
+  color:#fff;
+}
+.date-box .day {
+  position: absolute;
+  bottom:0;
+  right:0;
+  color:#fff;
+  font-size: 16px;
+}
+/* card content */
+.bot-area {
+  background: #fff;
+  padding: 30px 0;
+}
+.todoList {
+  position: relative;
+  z-index: 10;
+  background: #f7f7f7;
+  padding: 7px;
+  overflow-y:scroll;
+  min-height: 600px;
+}
+.todoList:after {
+  position: absolute;
+  z-index:-1;
+  content: '';
+  width: 100%;
+  height:200%;
+  top:0;
+  left:0;
+  background: #f7f7f7;
+}
+
+.todoList li {
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  background: #fff;
+  padding: 12px 20px;
+  border: 1px solide #eaeaea;
+}
+.todoList li+li {
+  margin-top:14px;
+}
+.todoList li:before {
+  content: '';
+  position: absolute;
+  left:0;
+  top:0;
+  width:5px;
+  height:100%;
+  background: #badc58;
+}
+.todoList li strong{
+  color:green;
+  font-size: 18px;
+}
+.todoList li p {
+  color:#666;
+  line-height: 1.5;
+}
+.todoList li .cover {
+  position: relative;
+  box-sizing: border-box;
+}
+.todoList li .cover .time {
+  position: absolute;
+  right:0;
+  top:3px;
+  font-size: 12px;
+}
+.todoList li .cover .star {
+  position: absolute;
+  bottom:3px;
+  right:0;
+  font-size: 12px;
+}
+.todoList li button {
+  position: absolute;
+  top:0;
+  right:0;
+  display: inline-block;
+  background: none;
+  border:none;
+}
+.todoList li button:before {
+  position: absolute;
+  content: '';
+  border-radius: 50%;
+  top:0;
+  right:0;
+  width:40px;
+  height:40px;
+  transform:translate(50%,-50%);
+  background: #be2edd;
+}
+.todoList li button xi {
+  position: relative;
+  top:20;
+  color:#fff;
+}
+.control-cover {
+  position: absolute;
+  bottom:0;
+  right:0;
+  width:100%;
+  padding-bottom: 30px;
+  text-align: center;
+}
+.add {
+  position: relative;
+  z-index: 20;
+  width:50px;
+  height:50px;
+  display: inline-block;
+  border-radius: 50%;
+  border:0;
+  background: #111;
+}
+.add {
+  color:#fff;
+  font-size: 30px;
+  line-height: 50px;
+}
