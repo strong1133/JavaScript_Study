@@ -1,9 +1,14 @@
 
 const todoService = require('../service/todo')
 
+const ob ={
+    name:"asd",
+    age:20,
+    desc:"fff"
+};
+
 exports.getTodo = function(req, res){
     console.log("====controller====");
     todoService.getTodo();
-    let j = JSON.stringify({ [Symbol('foo')]: 'foo' });
-    res.json(j.foo);
+    res.json(ob);
 };
