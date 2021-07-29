@@ -18,7 +18,7 @@ function UI() {
         <div class="cover">
           <strong>${item.title}</strong>
           <p>${item.content}</p>
-          <span class="time">${item.date}</span>
+          <span class="time">${item.date}</span>wa
           <span class="star">${item.star}</span>
         </div>
         <button class="finished"><xi class="xi-check-thin"></xi></button>
