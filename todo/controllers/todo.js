@@ -15,20 +15,19 @@ const getHello = async function(req, res){
 const getTodo = async function(req, res){
     console.log("====getTodo====");
     let todos = await todoService.getTodo()
-    console.log(todos)
+    // console.log(todos)
     respDto.responseDto(res, 200, todos)
-
 };
 
 // todos 작성
 const writeTodo = async function(req, res){
     console.log("====writeTodo====");
-    // res.send(todoService.writeTodo(req.body))
     let todos = await todoService.writeTodo(req.body)
-    console.log(todos)
+    // console.log(todos)
     respDto.responseDto(res, 200, todos)
-
 };
+
+
 
 
 module.exports = {

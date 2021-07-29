@@ -42,6 +42,18 @@ const writeTodo = async function(req, res){
     }
 }
 
+const updateTodo = async function(req, res){
+    const id = req.params.id;
+    TestDB.findByIdAndUpdate(id, { content: req.body.content }, err => {
+        if(err){
+            console.log("==== !수정 실패! ====");
+        }
+        console.log("==== Success!! Update TodoTask ====");
+        console.log("id: " + id + "\nchanged content: " + req.body.content);
+        return {msg:"수정 완료"};
+    });
+}
+
 
 module.exports = {
     "getTodo": getTodo,
