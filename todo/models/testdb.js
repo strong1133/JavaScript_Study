@@ -1,13 +1,15 @@
-const mongoose = require("mongoose");
-const testdbSchema = new mongoose.Schema({
+
+// Todo Schema
+const mongoose = require('mongoose');
+const testDBSchema = new mongoose.Schema({
   content: {
     type: String,
-    required: true,
+    required: true
   },
   date: {
     type: String,
-    required: true,
-  },
+    required: true
+  }
 });
 
-module.exports = mongoose.model('testdb', testdbSchema);
+module.exports = mongoose.model('TestDB', testDBSchema);

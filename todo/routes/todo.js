@@ -7,5 +7,8 @@ const controller = require("../controllers/todo");
 
 // Main
 router.get('/', controller.getTodo); 
+router.get('/hello', controller.getHello); 
+
+router.post('/',controller.writeTodo);
 
 module.exports = router;

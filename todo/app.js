@@ -11,7 +11,12 @@ app.set("views", path.join(__dirname, 'views'));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
+app.use("/public", express.static(__dirname + '/public'));
 
+//body -> json
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 // Router Setting
 const router = require("./routes/index");

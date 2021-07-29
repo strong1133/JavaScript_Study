@@ -7,12 +7,10 @@ const viewController = require("../controllers/home");
 const TodoRouter = require('./todo');
 
 // view Controller
-// router.use('/', viewController.main);
-router.get('/', function(req,res){
-    res.render("index");
-})
+router.get('/', viewController.main);
 
-router.use('/todo', TodoRouter); 
+// todo Controller
+router.use('/todo', [TodoRouter]); 
 
 
 module.exports = router;
