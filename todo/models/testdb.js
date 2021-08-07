@@ -2,10 +2,7 @@
 // Todo Schema
 const mongoose = require('mongoose');
 const testDBSchema = new mongoose.Schema({
-  _id: {
-    type: Number,
-    required: true
-  },
+  
   content: {
     type: String,
     required: true
@@ -18,6 +15,5 @@ const testDBSchema = new mongoose.Schema({
 {versionKey: false }
 );
 
-testDBSchema.plugin(autoIn)
 
 module.exports = mongoose.model('TestDB', testDBSchema);
