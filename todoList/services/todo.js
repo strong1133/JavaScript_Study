@@ -23,15 +23,18 @@ const writeTodo = async (req, res, err)=>{
 }
 
 //put Todo
-const updateTodo = async (id, data, req, err) =>{
-    if(err){
-        console.log("==== 수정 실패 ====");
-        throw new Error("수정 실패");
-    }
+const updateTodo =  (id, data, req, err) =>{
+    TodoDB.findOne({_id:id});
     if (data === null){
         throw new Error("수정 실패");
     }
-    await TodoDB.findByIdAndUpdate(id, {content: data});
+    return TodoDB.findByIdAndUpdate(id, {content: data});
+}
+
+//delete Todo
+const deleteTodo =  (id) =>{
+    console.log(id)
+    return TodoDB.deleteOne({_id:id});
 }
 
 
@@ -39,4 +42,5 @@ module.exports={
     "getTodo":getTodo,
     "writeTodo":writeTodo,
     "updateTodo":updateTodo,
+    "deleteTodo":deleteTodo
 }

@@ -40,7 +40,7 @@ const updateTodo = async(req, res)=>{
         if (req.body.content === undefined){
             throw new Error
         }
-
+        
         let data = req.body.content;
         let todos = await todoService.updateTodo(id, data);
         
@@ -50,10 +50,22 @@ const updateTodo = async(req, res)=>{
     }
 }
 
+// delete Todo
+const deleteTodo = async(req, res)=>{
+    try{
+        let id = req.params.todoid
+        await todoService.deleteTodo(id);
+        respDto.responseDto(res, 200, "삭제완료");
+    }catch(error){
+        respDto.errorResponseDto(res, 500, error.message);
+    }
+}
+
 module.exports = {
     "getHello":getHello,
     "getTodo":getTodo,
     "writeTodo":writeTodo,
-    "updateTodo":updateTodo
+    "updateTodo":updateTodo,
+    "deleteTodo":deleteTodo
 }
 

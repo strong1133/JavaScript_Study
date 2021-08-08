@@ -16,6 +16,9 @@ router.post('/', controller.writeTodo);
 //putTodo
 router.put('/:todoid', controller.updateTodo);
 
+//deleteTodo
+router.delete('/:todoid', controller.deleteTodo);
+
 
 
 module.exports = router;
