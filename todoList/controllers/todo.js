@@ -27,16 +27,33 @@ const writeTodo = async(req, res)=>{
     console.log('=== postTodo ===')
     try{
         let todos = await todoService.writeTodo(req.body);
-        respDto.responseDto(res, 200, todos)
+        respDto.responseDto(res, 200, todos);
     }catch(error){
-        respDto.errorResponseDto(res, 400, error);
+        respDto.errorResponseDto(res, 400, error.message);
     }
 }
 
+//update Todo
+const updateTodo = async(req, res)=>{
+    try{
+        let id = req.params.todoid
+        if (req.body.content === undefined){
+            throw new Error
+        }
+
+        let data = req.body.content;
+        let todos = await todoService.updateTodo(id, data);
+        
+        respDto.responseDto(res, 200, todos);
+    }catch(error){
+        respDto.errorResponseDto(res, 500, error.message);
+    }
+}
 
 module.exports = {
     "getHello":getHello,
     "getTodo":getTodo,
-    "writeTodo":writeTodo
+    "writeTodo":writeTodo,
+    "updateTodo":updateTodo
 }
 

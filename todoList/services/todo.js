@@ -22,8 +22,21 @@ const writeTodo = async (req, res, err)=>{
     return todo.save();
 }
 
+//put Todo
+const updateTodo = async (id, data, req, err) =>{
+    if(err){
+        console.log("==== 수정 실패 ====");
+        throw new Error("수정 실패");
+    }
+    if (data === null){
+        throw new Error("수정 실패");
+    }
+    await TodoDB.findByIdAndUpdate(id, {content: data});
+}
+
 
 module.exports={
     "getTodo":getTodo,
     "writeTodo":writeTodo,
+    "updateTodo":updateTodo,
 }

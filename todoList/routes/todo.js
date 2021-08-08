@@ -13,6 +13,9 @@ router.get('/', controller.getTodo);
 //postTodo
 router.post('/', controller.writeTodo);
 
+//putTodo
+router.put('/:todoid', controller.updateTodo);
+
 
 
 module.exports = router;

@@ -23,7 +23,7 @@ const router = require("./routes/index");
 app.use(router);
 
 // DataBase Connect
-mongoose.connect("mongodb://localhost:27017/node", {useNewUrlParser: true, useUnifiedTopology: true}, function(err){
+mongoose.connect("mongodb://localhost:27017/node", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false}, function(err){
     if(err){
         console.log("데이터베이스 연결 오류");
     }
