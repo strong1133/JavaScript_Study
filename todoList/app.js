@@ -15,6 +15,7 @@ app.use('/public', express.static(__dirname + '/public'));
 
 // JSON
 app.use(express.json());
+app.use(express.urlencoded({extended: false}))
 
 
 // Router Setting
