@@ -8,6 +8,7 @@ router.get('/', (req, res) =>{
     res.send('라우터 진입 성공!')
 });
 
+//todo Router
 router.use('/todo', [TodoRouter]);
 
 module.exports = router;

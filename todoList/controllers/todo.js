@@ -33,7 +33,7 @@ const writeTodo = async(req, res)=>{
     }
 }
 
-//update Todo
+//put Todo
 const updateTodo = async(req, res)=>{
     try{
         let id = req.params.todoid
