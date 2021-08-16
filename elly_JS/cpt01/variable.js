@@ -63,3 +63,28 @@ console.log(nAn); //NaN
 
 const bigint = 123123123123142321232323123233314142434n;
 console.log(bigint)
+
+
+//**************** 
+// Null, undifined
+//**************** 
+
+let nothing = null;
+console.log(`nothing: ${nothing}`)
+
+let x 
+console.log(`undifined: ${x}`)
+
+
+//**************** 
+// Symbol
+//**************** 
+
+const Symbol1 = Symbol('id');
+const Symbol2 = Symbol('id');
+console.log(Symbol1 === Symbol2) //flase => Symbol은 같은 키로 심볼 했어도 매번 다르게 생기지만
+
+const Symbol3 = Symbol.for('id');
+const Symbol4 = Symbol.for('id');
+console.log(Symbol3 === Symbol4) //true => 같은 키일때 똑같게 하고 싶다면 Symbol.for를 사용.
+
