@@ -191,6 +191,7 @@ describe('Article 요구사항 테스트', () => {
             });
             noticeBoard.publish(article);
         }).not.toThrow();
+        jest.useFakeTimers();
 
         expect(() => {
             const article2 = new Article({

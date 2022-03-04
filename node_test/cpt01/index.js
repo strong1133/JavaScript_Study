@@ -51,9 +51,9 @@ class Article {
 
         const { subject, content, author } = article;
 
-        if (subject == null || subject == "" || content == null || content == "" || author == null || author == "") {            
-            throw Error();
-        }
+        // if (subject == null || subject == "" || content == null || content == "" || author == null || author == "") {            
+        //     throw Error();
+        // }
 
         if(!subject || !content || !author)  throw Error();
 
