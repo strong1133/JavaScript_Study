@@ -1090,10 +1090,22 @@ const excel = {
         });
         // console.log(rows[''])
 
+        res.setHeader(
+        "Content-Type",
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        );
+        res.setHeader(
+        "Content-Disposition",
+        "attachment; filename=" + "salary.xlsx"
+        ); 
+        
 
-        await workbook.xlsx.writeFile('./dumy.xlsx')
+        return await workbook.xlsx.write(res).then(
+            function(){
+                res.status(200).end()
+            }
+        )
 
-        getCallbackBranch(null, "success", res);
     },
 };
 
