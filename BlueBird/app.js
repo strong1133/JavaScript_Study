@@ -13,10 +13,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.set("view engine", "pug");
 
 const blue = require("./route/blue")
+const excel = require("./route/excel")
 
 
 
 app.use('/blue', blue)
+app.use('/excel', excel)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
