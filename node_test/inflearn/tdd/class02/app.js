@@ -1,5 +1,8 @@
 const express = require('express');
 const app = express();
+const port = 3000;
+
+const router = express.Router();
 
 const logger = (req, res, next) =>{
     console.log("LOG :: ");
@@ -7,7 +10,13 @@ const logger = (req, res, next) =>{
 }
 
 app.use(logger);
+app.use(router);
 
-app.listen(3000, ()=>{
-    console.log('Express Is Run');
+
+router.get("/", (req, res)=>{
+    res.json("Test Get")
+})
+
+app.listen(port, ()=>{
+    console.log('Express Is Run :: ', port);
 })
