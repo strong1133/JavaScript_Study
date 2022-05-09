@@ -15,14 +15,16 @@ app.use(morgan('dev')); // logger
 app.use(router);
 
 
-router.get("/", (req, res)=>{
+app.get("/", (req, res)=>{
     res.json("Test Get");
 });
 
-router.get("/users", (req, res)=>{
+app.get("/users", (req, res)=>{
     res.json(users);
 })
 
 app.listen(port, ()=>{
     console.log('Express Is Run :: ', port);
 })
+
+module.exports = app;
