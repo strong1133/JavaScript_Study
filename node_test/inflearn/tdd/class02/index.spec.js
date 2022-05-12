@@ -27,9 +27,22 @@ describe("GET /user 는", () => {
     describe("실패시", () => {
         it("limit이 숫자가 아니면 400을 응답한다.", (done) => {
             request(app)
-                .get("/users?limit=two") 
+                .get("/users?limit=two")
                 .expect(400)
-                .end((err, res) =>{
+                .end((err, res) => {
+                    done();
+                });
+        });
+    });
+});
+
+describe("GET /users/1 는", () => {
+    describe("성공시", () => {
+        it("id가 1인 user를 반환한다.", (done) => {
+            request(app)
+                .get("/users/1")
+                .end((err, res) => {
+                    res.body.should.have.property("id", 1);
                     done();
                 });
         });
