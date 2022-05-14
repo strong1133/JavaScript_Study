@@ -43,6 +43,22 @@ app.get("/users/:id", (req, res) => {
     res.json(targetUser);
 });
 
+app.delete("/users/:id", (req, res) => {
+    const id = parseInt(req.params.id, 10);
+
+    let targetUser = users.filter((user) => user.id !== id);
+
+    console.log(targetUser);
+    
+
+    if (Number.isNaN(id)) {
+        return res.status(400).end();
+    }
+
+    res.status(204).end();
+});
+
+
 app.listen(port, () => {
     console.log("Express Is Run :: ", port);
 });
