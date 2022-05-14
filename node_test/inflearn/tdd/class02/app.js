@@ -30,6 +30,16 @@ app.get("/users/:id", (req, res) => {
     const id = parseInt(req.params.id, 10);
 
     let targetUser = users.filter((user) => user.id == id)[0];
+
+    if (Number.isNaN(id)) {
+        return res.status(400).end();
+    }
+
+    if (!targetUser) {
+        return res.status(404).end();
+    }
+
+
     res.json(targetUser);
 });
 
