@@ -46,5 +46,15 @@ describe("GET /users/1 는", () => {
                     done();
                 });
         });
-    });
+    }); 
+    describe("실패시", ()=>{
+        it("id가 숫자가 아니면 400을 응답한다.", (done)=>{
+            request(app)
+                .get('/users/one')
+                .expect(400)
+                .end((err, res)=>{
+                    done();
+                })
+        })
+    })
 });
