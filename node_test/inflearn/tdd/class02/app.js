@@ -59,6 +59,12 @@ app.delete("/users/:id", (req, res) => {
 });
 
 
+app.post("/users", (req, res)=>{
+    let newId = users[-1]['id'] +1
+    console.log(newId);
+})
+
+
 app.listen(port, () => {
     console.log("Express Is Run :: ", port);
 });
